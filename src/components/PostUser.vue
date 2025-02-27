@@ -2,7 +2,7 @@
   <div>
     <form @submit.prevent="sendPostRequest" style="grid-gap: 20px; display: flex; flex-direction: column; align-items: center;">
       <input v-model="data.inn" type="text" placeholder="Введите ИНН" />
-      <input v-model="data.requestDate" type="date" placeholder="Введите дату (формата 2012-01-25)" style="width: 222px"/>
+      <input v-model="data.requestDate" type="date" style="width: 125px"/>
       <button type="submit">Проверить</button>
     </form>
     <div v-if="error" class="answer" style="color: red">
@@ -22,7 +22,7 @@ export default {
     return {
       data: {
         inn: '',
-        requestDate: ''
+        requestDate: new Date().toISOString().split('T')[0],
       },
       error: null,
       trues: null
