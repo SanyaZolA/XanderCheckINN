@@ -89,9 +89,9 @@ h2 {
 .answer {
   background-color: #f4f4f4;
   border: 1px solid #ddd;
-  font-family: monospace;  /* Для сохранения моноширинного шрифта */
-  white-space: pre-wrap;  /* Текст будет переноситься, если нужно */
-  word-wrap: break-word;  /* Если слово слишком длинное, оно будет разбиваться */
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 .pre{
