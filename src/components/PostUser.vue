@@ -6,11 +6,9 @@
       <button type="submit">Проверить</button>
     </form>
     <div v-if="error" class="answer" style="color: red">
-      <h2>Ошибка:</h2>
       <pre class="pre">{{ error }}</pre>
     </div>
     <div v-if="trues" class="answer" style="color: green">
-      <h2>Сообщение:</h2>
       <pre class="pre">{{ trues }}</pre>
     </div>
   </div>
@@ -66,12 +64,6 @@ export default {
 </script>
 
 <style scoped>
-
-h2 {
-  margin: 0px;
-  padding: 5px;
-}
-
 .answer {
   margin-top: 15px;
   background-color: #f4f4f4;
