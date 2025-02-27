@@ -80,7 +80,7 @@ export default {
           this.error = error.message;
         }
         this.response = null;
-        
+        this.trues = null; 
       }
     }
   }
