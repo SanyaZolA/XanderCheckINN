@@ -9,11 +9,11 @@
       <h2>Ответ:</h2>
       <pre class="pre">{{ response }}</pre>
     </div>
-    <div v-if="error" class="answer" style="color: red;">
+    <div v-if="error" class="answer" style="color: red">
       <h2>Ошибка:</h2>
       <pre class="pre">{{ error }}</pre>
     </div>
-    <div v-if="trues" class="answer" style="color: green ">
+    <div v-if="trues" class="answer" style="color: green">
       <h2>Сообщение:</h2>
       <pre class="pre">{{ trues }}</pre>
     </div>
@@ -83,10 +83,12 @@ export default {
 <style scoped>
 
 h2 {
-  margin-top: 10px;
+  margin: 0px;
+  padding: 5px;
 }
 
 .answer {
+  margin-top: 15px;
   background-color: #f4f4f4;
   border: 1px solid #ddd;
   font-family: monospace;
@@ -95,6 +97,8 @@ h2 {
 }
 
 .pre{
+  padding: 10px 3px 10px 10px;
   white-space: pre-wrap;
+  margin: 0px;
 }
 </style>
