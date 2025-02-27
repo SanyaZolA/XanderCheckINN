@@ -21,12 +21,6 @@
 </template>
 
 <script>
-const newDate = new Date();
-const day = String(newDate.getDate()).padStart(2, '0');  // добавляем ведущий ноль, если день < 10
-const month = String(newDate.getMonth() + 1).padStart(2, '0');  // месяцы от 0 до 11, поэтому +1
-const year = newDate.getFullYear();
-const formattedDate = `${year}-${month}-${day}`;
-console.log(formattedDate);
 import axios from 'axios';
 
 export default {
