@@ -45,10 +45,7 @@ export default {
     async sendPostRequest() {
       try {
         const res = await axios.post('https://statusnpd.nalog.ru/api/v1/tracker/taxpayer_status', this.data);
-
-        // Проверка на успешный ответ
         if (res.status === 200) {
-          // Если код ответа сервера 'validation.failed', показываем ошибку валидации
           if (res.data.code === 'validation.failed') {
             this.error = res.data.message;
             this.response = null;
@@ -62,21 +59,17 @@ export default {
             this.response = null;
             this.error = null;
           } else {
-            this.response = res.data; // Успешный ответ
+            this.response = res.data;
             this.error = null;
             this.trues = null;
           }
         }
       } catch (error) {
-        // Обработка других ошибок (например, сетевая ошибка)
         if (error.response) {
-          // Ошибка от сервера (например, код 4xx или 5xx)
           this.error = `Ошибка: ${error.response.data.message || 'Неизвестная ошибка'}`;
         } else if (error.request) {
-          // Ошибка с запросом (например, сервер не доступен)
           this.error = 'Нет ответа от сервера';
         } else {
-          // Другая ошибка
           this.error = error.message;
         }
         this.response = null;
