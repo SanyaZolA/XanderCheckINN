@@ -5,17 +5,17 @@
       <input v-model="data.requestDate" type="date" placeholder="Введите дату (формата 2012-01-25)" style="width: 222px"/>
       <button type="submit">Проверить</button>
     </form>
-    <div v-if="response">
+    <div v-if="response" class="answer">
       <h2>Ответ:</h2>
-      <pre>{{ response }}</pre>
+      <pre class="pre">{{ response }}</pre>
     </div>
-    <div v-if="error" style="color: red;">
+    <div v-if="error" class="answer" style="color: red;">
       <h2>Ошибка:</h2>
-      <pre>{{ error }}</pre>
+      <pre class="pre">{{ error }}</pre>
     </div>
-    <div v-if="trues" style="color: green;">
+    <div v-if="trues" class="answer" style="color: green ">
       <h2>Сообщение:</h2>
-      <pre>{{ trues }}</pre>
+      <pre class="pre">{{ trues }}</pre>
     </div>
   </div>
 </template>
@@ -79,3 +79,22 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+
+h2 {
+  margin-top: 10px;
+}
+
+.answer {
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+  font-family: monospace;  /* Для сохранения моноширинного шрифта */
+  white-space: pre-wrap;  /* Текст будет переноситься, если нужно */
+  word-wrap: break-word;  /* Если слово слишком длинное, оно будет разбиваться */
+}
+
+.pre{
+  white-space: pre-wrap;
+}
+</style>
