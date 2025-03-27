@@ -1,15 +1,17 @@
 <template>
   <img alt="logo" src="./assets/iconslogo.png">
-  <StartPage msg="Проверка ИНН на самозанятого"/>
+  <StartPage title="Проверка ИНН на самозанятого"/>
   <PostUser />
 </template>
 
 <script>
+import StartPage from './components/StartPage.vue'
 import PostUser from './components/PostUser.vue';
 
 export default {
   name: 'App',
   components: {
+    StartPage,
     PostUser
   }
 }

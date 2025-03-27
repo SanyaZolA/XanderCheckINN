@@ -1,6 +1,6 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+  <div class="title">
+    <h1>{{ title }}</h1>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
   name: 'StartPage',
   props: {
-    msg: String
+    title: String
   }
 }
 </script>
