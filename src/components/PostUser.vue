@@ -47,7 +47,10 @@ export default {
           this.responseColor = 'green';
       }
       } catch (error) {
-        if (error.response) {
+        if (error.response.data.code === 'validation.failed') {
+          this.answer = 'Ошибка: Указан некорректный ИНН';
+        } else if (error.response) {
+          console.log(error.response.data.code);
           this.responseColor = 'red';
           this.answer = `Ошибка: ${error.response.data.message || 'Неизвестная ошибка'}`;
         } else if (error.request) {
@@ -74,7 +77,7 @@ export default {
 }
 
 .text{
-  padding: 10px 3px 10px 10px;
+  padding: 10px 10px 10px 10px;
   white-space: pre-wrap;
   margin: 0px;
 }
