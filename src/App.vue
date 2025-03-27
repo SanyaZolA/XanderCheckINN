@@ -5,13 +5,11 @@
 </template>
 
 <script>
-import StartPage from './components/StartPage.vue'
 import PostUser from './components/PostUser.vue';
 
 export default {
   name: 'App',
   components: {
-    StartPage,
     PostUser
   }
 }
