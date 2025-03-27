@@ -2,6 +2,7 @@
   <img alt="logo" src="./assets/iconslogo.png">
   <StartPage title="Проверка ИНН на самозанятого"/>
   <PostUser />
+  <p class="pre">v 1.2</p>
 </template>
 
 <script>
@@ -29,5 +30,12 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.pre {
+  position: absolute;
+  text-align: end;
+  width: 100%;
+  bottom: 0px;
+  right: 20px;
 }
 </style>
