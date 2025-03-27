@@ -2,7 +2,7 @@
   <img alt="logo" src="./assets/iconslogo.png">
   <StartPage title="Проверка ИНН на самозанятого"/>
   <PostUser />
-  <p class="pre">v 1.2</p>
+  <p class="pre">v 1.3</p>
 </template>
 
 <script>
