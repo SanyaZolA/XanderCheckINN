@@ -22,7 +22,6 @@ export default {
   data() {
     return {
       isLoading: false,
-      fullPage: true,
       data: {
         requestDate: new Date().toISOString().split('T')[0],
       },
