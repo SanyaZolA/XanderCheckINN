@@ -12,7 +12,7 @@
   </div>
 </template>
 
-<script>
+<script >
 import axios from 'axios';
 import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/css/index.css';
@@ -30,7 +30,7 @@ export default {
     }
   },
       components: {
-            Loading
+            Loading,
         },
   methods: {
     async sendPostRequest() {
@@ -81,4 +81,6 @@ export default {
   white-space: pre-wrap;
   margin: 0px;
 }
+
+
 </style>

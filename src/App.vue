@@ -2,12 +2,12 @@
   <img alt="logo" src="./assets/iconslogo.png">
   <StartPage title="Проверка ИНН на самозанятого"/>
   <PostUser />
-  <p class="pre">v 1.3</p>
+  <p class="pre">v 1.3.1</p>
 </template>
 
 <script>
-import StartPage from './components/StartPage.vue'
-import PostUser from './components/PostUser.vue';
+import StartPage from './components/MainText.vue'
+import PostUser from './components/SearchINN.vue';
 
 export default {
   name: 'App',
