@@ -1,19 +1,19 @@
 <template>
   <img alt="logo" src="./assets/iconslogo.png">
-  <StartPage title="Проверка ИНН на самозанятого"/>
-  <PostUser />
+  <MainText title="Проверка ИНН на самозанятого"/>
+  <SearchINN />
   <p class="pre">v 1.3.1</p>
 </template>
 
 <script>
-import StartPage from './components/MainText.vue'
-import PostUser from './components/SearchINN.vue';
+import MainText from './components/MainText.vue'
+import SearchINN from './components/SearchINN.vue';
 
 export default {
   name: 'App',
   components: {
-    StartPage,
-    PostUser
+    MainText,
+    SearchINN
   }
 }
 
