@@ -1,6 +1,7 @@
 <template>
   <img alt="logo" src="./assets/iconslogo.png">
   <MainText title="Проверка ИНН на самозанятого"/>
+  <a href="https://github.com/xandercheckinn" target="_blank" rel="noopener noreferrer">GitHub</a>
   <SearchINN />
   <p class="pre">v 1.3.1</p>
 </template>
