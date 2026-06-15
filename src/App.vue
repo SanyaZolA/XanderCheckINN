@@ -12,7 +12,7 @@
 
       <main class="card">
         <ApiFns />
-        <span class="version">v 1.4.1</span>
+        <span class="version">v 1.4.2</span>
       </main>
     </div>
   </div>
@@ -101,7 +101,7 @@ body {
   background: #fff;
   border-radius: 24px;
   margin: 20px;
-  min-width: 350px;
+  min-width: 500px;
   padding: 32px 24px 15px 24px;
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
   border: 1px solid rgba(226, 232, 240, 0.9);
@@ -114,12 +114,17 @@ body {
   }
 
   .brand-text h1 {
-    font-size: 20px;
+    font-size: 19px;
   }
 
+  .logo {
+    width: 30px;
+    height: 30px;
+}
   .card {
     padding: 24px 18px;
     border-radius: 20px;
+    min-width: 350px;
   }
 }
 </style>
