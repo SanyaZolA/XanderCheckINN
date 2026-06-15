@@ -101,7 +101,7 @@ body {
   background: #fff;
   border-radius: 24px;
   margin: 20px;
-  min-width: 400px;
+  min-width: 350px;
   padding: 32px 24px 15px 24px;
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
   border: 1px solid rgba(226, 232, 240, 0.9);

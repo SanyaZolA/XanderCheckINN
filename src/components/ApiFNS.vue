@@ -126,6 +126,21 @@ export default {
   text-align: left;
 }
 
+.field-date input {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  font-size: 20px;
+  line-height: 1.25;
+  -webkit-appearance: none;
+  appearance: none;
+  overflow: hidden;
+  min-height: 50px;
+  text-align: center;
+}
+
 .field label {
   font-size: 14px;
   font-weight: 600;
