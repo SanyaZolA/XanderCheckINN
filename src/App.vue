@@ -12,7 +12,7 @@
 
       <main class="card">
         <ApiFns />
-        <span class="version">v 1.4.2</span>
+        <span class="version">v 1.5</span>
       </main>
     </div>
   </div>
@@ -35,21 +35,17 @@ export default {
 }
 
 body {
-  margin: 0;
+  margin-top: 150px;
 }
 
 #app {
-  min-height: 100vh;
+  max-height: 100vh;
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background:
-    radial-gradient(circle at top left, #e8f1ff 0%, transparent 35%),
-    #f4f7fb;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #1f2d3d;
 }
 
 .app-shell {
@@ -93,7 +89,7 @@ body {
 .version {
   font-size: 13px;
   color: #94a3b8;
-  padding: 6px 10px;
+  padding: 100px 10px;
   border-radius: 999px;
 }
 

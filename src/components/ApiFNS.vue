@@ -2,8 +2,8 @@
   <div class="checker-card vl-parent">
     <loading
       v-model:active="isLoading"
-      :can-cancel="false"
       :is-full-page="false"
+      :can-cancel="false"
       background-color="rgba(15, 23, 42, 0.12)"
       color="#2563eb"
       loader="dots"
@@ -35,8 +35,12 @@
       </button>
     </form>
 
+<transition name="result-expand">
+  <div
+    v-if="answer"
+    class="result-wrap"
+  >
     <div
-      v-if="answer"
       class="result-box"
       :class="responseStatus"
       role="status"
@@ -44,10 +48,11 @@
     >
       <div class="result-head">
         <span class="status-dot"></span>
-        <strong>{{ responseStatus === 'success' ? 'Результат проверки' : 'Ошибка проверки' }}</strong>
+        <strong class="result-text">{{ answer }}</strong>
       </div>
-      <p class="result-text">{{ answer }}</p>
     </div>
+  </div>
+</transition>
   </div>
 </template>
 
@@ -195,9 +200,10 @@ export default {
 }
 
 .result-box {
-  margin-top: 18px;
+  max-width: 450px;
+  margin-bottom: 10px;
   border-radius: 16px;
-  padding: 16px 18px;
+  padding: 12px 14px;
   border: 1px solid #e2e8f0;
   background: #f8fafc;
 }
@@ -214,9 +220,7 @@ export default {
 
 .result-head {
   display: flex;
-  align-items: center;
   gap: 10px;
-  margin-bottom: 10px;
   color: #0f172a;
 }
 
@@ -232,6 +236,7 @@ export default {
 }
 
 .result-box.error .status-dot {
+  margin-top: 7px;
   background: #ea580c;
 }
 
@@ -241,5 +246,28 @@ export default {
   line-height: 1.55;
   white-space: pre-wrap;
   word-break: break-word;
+}
+
+.result-wrap {
+  overflow: hidden;
+}
+
+.result-expand-enter-active,
+.result-expand-leave-active {
+  transition: max-height 0.28s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+.result-expand-enter-from,
+.result-expand-leave-to {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.result-expand-enter-to,
+.result-expand-leave-from {
+  max-height: 200px;
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
