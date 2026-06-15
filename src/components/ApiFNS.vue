@@ -109,6 +109,7 @@ export default {
 <style scoped>
 .checker-card {
   position: relative;
+  max-width: 700px;
 }
 
 .checker-form {

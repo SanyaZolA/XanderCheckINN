@@ -5,14 +5,14 @@
         <div class="brand">
           <img alt="logo" src="./assets/iconslogo.png" class="logo" />
           <div class="brand-text">
-            <h1>Проверка статуса самозанятого через ФНС</h1>
+            <h1>Проверка статуса самозанятого</h1>
           </div>
         </div>
       </header>
 
       <main class="card">
         <ApiFns />
-        <span class="version">v 1.4</span>
+        <span class="version">v 1.4.1</span>
       </main>
     </div>
   </div>
@@ -54,7 +54,7 @@ body {
 
 .app-shell {
   width: 100%;
-  max-width: 560px;
+  max-width: 700px;
 }
 
 .app-header {
@@ -68,6 +68,7 @@ body {
 .brand {
   display: flex;
   align-items: center;
+  margin-left: 25px;
   gap: 10px;
 }
 
@@ -99,6 +100,8 @@ body {
 .card {
   background: #fff;
   border-radius: 24px;
+  margin: 20px;
+  min-width: 400px;
   padding: 32px 24px 15px 24px;
   box-shadow: 0 20px 50px rgba(15, 23, 42, 0.12);
   border: 1px solid rgba(226, 232, 240, 0.9);
