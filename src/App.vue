@@ -19,14 +19,14 @@
 </template>
 
 <script>
-import ApiFns from './components/ApiFNS.vue'
+import ApiFns from "./components/ApiFNS.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    ApiFns
-  }
-}
+    ApiFns,
+  },
+};
 </script>
 
 <style>
@@ -116,7 +116,7 @@ body {
   .logo {
     width: 30px;
     height: 30px;
-}
+  }
   .card {
     padding: 24px 18px;
     border-radius: 20px;

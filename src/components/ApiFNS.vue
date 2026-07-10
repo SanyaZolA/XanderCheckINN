@@ -23,92 +23,85 @@
 
       <div class="field field-date">
         <label for="requestDate">Дата установки статуса</label>
-        <input
-          id="requestDate"
-          v-model="data.requestDate"
-          type="date"
-        />
+        <input id="requestDate" v-model="data.requestDate" type="date" />
       </div>
 
       <button class="submit-btn" type="submit" :disabled="isLoading">
-        {{ isLoading ? 'Проверяем...' : 'Проверить' }}
+        {{ isLoading ? "Проверяем..." : "Проверить" }}
       </button>
     </form>
 
-<transition name="result-expand">
-  <div
-    v-if="answer"
-    class="result-wrap"
-  >
-    <div
-      class="result-box"
-      :class="responseStatus"
-      role="status"
-      aria-live="polite"
-    >
-      <div class="result-head">
-        <span class="status-dot"></span>
-        <strong class="result-text">{{ answer }}</strong>
+    <transition name="result-expand">
+      <div v-if="answer" class="result-wrap">
+        <div
+          class="result-box"
+          :class="responseStatus"
+          role="status"
+          aria-live="polite"
+        >
+          <div class="result-head">
+            <span class="status-dot"></span>
+            <strong class="result-text">{{ answer }}</strong>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</transition>
+    </transition>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
-import Loading from 'vue-loading-overlay'
-import 'vue-loading-overlay/dist/css/index.css'
-import { nextTick } from 'vue'
+import axios from "axios";
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/css/index.css";
+import { nextTick } from "vue";
 
 export default {
   components: {
-    Loading
+    Loading,
   },
   data() {
     return {
       isLoading: false,
       data: {
-        inn: '',
-        requestDate: new Date().toISOString().split('T')[0]
+        inn: "",
+        requestDate: new Date().toISOString().split("T")[0],
       },
-      responseStatus: 'error',
-      answer: null
-    }
+      responseStatus: "error",
+      answer: null,
+    };
   },
   methods: {
     async sendPostRequest() {
-      this.isLoading = true
-      await nextTick()
-      this.answer = null
+      this.isLoading = true;
+      await nextTick();
+      this.answer = null;
 
       try {
         const res = await axios.post(
-          'https://statusnpd.nalog.ru/api/v1/tracker/taxpayer_status',
-          this.data
-        )
+          "https://statusnpd.nalog.ru/api/v1/tracker/taxpayer_status",
+          this.data,
+        );
 
-        this.answer = res.data.message
-        this.responseStatus = res.data.status === false ? 'error' : 'success'
+        this.answer = res.data.message;
+        this.responseStatus = res.data.status === false ? "error" : "success";
       } catch (error) {
-        this.responseStatus = 'error'
+        this.responseStatus = "error";
 
-        if (error.response?.data?.code === 'validation.failed') {
-          this.answer = 'Ошибка: указан некорректный ИНН'
+        if (error.response?.data?.code === "validation.failed") {
+          this.answer = "Ошибка: указан некорректный ИНН";
         } else if (error.response) {
-          this.answer = `Ошибка: ${error.response.data.message || 'Неизвестная ошибка'}`
+          this.answer = `Ошибка: ${error.response.data.message || "Неизвестная ошибка"}`;
         } else if (error.request) {
-          this.answer = 'Нет ответа от сервера'
+          this.answer = "Нет ответа от сервера";
         } else {
-          this.answer = error.message
+          this.answer = error.message;
         }
       } finally {
-        this.isLoading = false
+        this.isLoading = false;
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -162,7 +155,10 @@ export default {
   color: #1e293b;
   font-size: 15px;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .field input:focus {
@@ -184,7 +180,10 @@ export default {
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
   box-shadow: 0 10px 24px rgba(47, 111, 237, 0.18);
 }
 
@@ -232,6 +231,7 @@ export default {
 }
 
 .result-box.success .status-dot {
+  margin-top: 7px;
   background: #16a34a;
 }
 
@@ -254,7 +254,10 @@ export default {
 
 .result-expand-enter-active,
 .result-expand-leave-active {
-  transition: max-height 0.28s ease, opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    max-height 0.28s ease,
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .result-expand-enter-from,
